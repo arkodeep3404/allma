@@ -21,6 +21,11 @@ const AVAILABLE_SERVICES = {
     url: 'https://discord.com/login?redirect_to=%2Fchannels%2F%40me',
     defaultIcon: path.join(__dirname, 'assets', 'img', 'discord-icon.png'),
   },
+  whatsapp: {
+    name: 'WhatsApp',
+    url: 'https://web.whatsapp.com/',
+    defaultIcon: path.join(__dirname, 'assets', 'img', 'discord-icon.png'),
+  },
 };
 const MACOS = 'darwin';
 const sidebarWidth = 112;
@@ -75,6 +80,7 @@ const loadServices = () => {
   serviceViews.push(createServiceView('https://app.slack.com/client'));
   serviceViews.push(createServiceView('https://messenger.com/'));
   serviceViews.push(createServiceView('https://discord.com/login?redirect_to=%2Fchannels%2F%40me'));
+  serviceViews.push(createServiceView('https://web.whatsapp.com/'));
 
   for (let i = 0; i < serviceViews.length; i++) {
     mainWindow.addBrowserView(serviceViews[i]);
@@ -117,6 +123,7 @@ const configureEventHandlers = () => {
       { details: AVAILABLE_SERVICES['slack'], sounds: true, enabled: true },
       { details: AVAILABLE_SERVICES['messenger'], sounds: true, enabled: true },
       { details: AVAILABLE_SERVICES['discord'], sounds: true, enabled: true },
+      { details: AVAILABLE_SERVICES['whatsapp'], sounds: true, enabled: true },
     ];
   });
 };
