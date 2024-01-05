@@ -24,7 +24,12 @@ const AVAILABLE_SERVICES = {
   whatsapp: {
     name: 'WhatsApp',
     url: 'https://web.whatsapp.com/',
-    defaultIcon: path.join(__dirname, 'assets', 'img', 'discord-icon.png'),
+    defaultIcon: path.join(__dirname, 'assets', 'img', 'whatsapp-icon.png'),
+  },
+  instagram: {
+    name: 'Instagram',
+    url: 'https://www.instagram.com/',
+    defaultIcon: path.join(__dirname, 'assets', 'img', 'instagram-icon.png'),
   },
 };
 const MACOS = 'darwin';
@@ -81,6 +86,7 @@ const loadServices = () => {
   serviceViews.push(createServiceView('https://messenger.com/'));
   serviceViews.push(createServiceView('https://discord.com/login?redirect_to=%2Fchannels%2F%40me'));
   serviceViews.push(createServiceView('https://web.whatsapp.com/'));
+  serviceViews.push(createServiceView('https://www.instagram.com/'));
 
   for (let i = 0; i < serviceViews.length; i++) {
     mainWindow.addBrowserView(serviceViews[i]);
@@ -124,6 +130,7 @@ const configureEventHandlers = () => {
       { details: AVAILABLE_SERVICES['messenger'], sounds: true, enabled: true },
       { details: AVAILABLE_SERVICES['discord'], sounds: true, enabled: true },
       { details: AVAILABLE_SERVICES['whatsapp'], sounds: true, enabled: true },
+      { details: AVAILABLE_SERVICES['instagram'], sounds: true, enabled: true },
     ];
   });
 };

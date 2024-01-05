@@ -26,7 +26,7 @@
     }
   },
   "scripts": {
-    "start": "ELECTRON_DEV=true electron ./src/main.js",
+    "start": "electron ./src/main.js",
     "postinstall": "electron-builder install-app-deps",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
